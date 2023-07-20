@@ -18,9 +18,7 @@ Route::get('testemail', function () {
 });
 
 Route::get('/logout', 'App\Http\Controllers\Auth\LoginController@logout');
-Route::get('/', function () {
-    return view('welcome');
-});
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes(['verify' => true]);
@@ -516,130 +514,14 @@ Route::get ('/cryptoplan', [App\Http\Controllers\Userdashcontroller::class, 'cry
 
 //visitors routes
 
+
+Route::get('/about', [App\Http\Controllers\VisitorController::class, 'about'])->name('about');
+Route::get('/blog', [App\Http\Controllers\VisitorController::class, 'blog'])->name('blog');
+Route::get('/brochure', [App\Http\Controllers\VisitorController::class, 'brochure'])->name('brochure');
+Route::get('/companyvideo', [App\Http\Controllers\VisitorController::class, 'companyvideo'])->name('companyvideo');
+Route::get('/contact', [App\Http\Controllers\VisitorController::class, 'contact'])->name('contact');
+Route::get('/faq', [App\Http\Controllers\VisitorController::class, 'faq'])->name('faq');
+Route::get('/index', [App\Http\Controllers\VisitorController::class, 'index'])->name('index');
+Route::get('/invest', [App\Http\Controllers\VisitorController::class, 'invest'])->name('invest');
+Route::get('/testimony', [App\Http\Controllers\VisitorController::class, 'testimony'])->name('testimony');
 Route::get('/', [App\Http\Controllers\VisitorController::class, 'index'])->name('index');
-Route::get('/about', [App\Http\Controllers\VisitorController::class, 'about'])->name('about');
-Route::get('/invest', [App\Http\Controllers\VisitorController::class, 'invest'])->name('invest');
-Route::get('/blog', [App\Http\Controllers\VisitorController::class, 'blog'])->name('blog');
-Route::get('/viewnews', [App\Http\Controllers\VisitorController::class, 'news'])->name('viewnews');
-Route::get('/faq', [App\Http\Controllers\VisitorController::class, 'faq'])->name('faq');
-Route::get('/contact', [App\Http\Controllers\VisitorController::class, 'contact'])->name('contact');
-Route::get('/terms', [App\Http\Controllers\VisitorController::class, 'terms'])->name('terms');
-Route::post('/postcontact', [App\Http\Controllers\VisitorController::class, 'postcontact'])->name('postcontact');
-
-Route::get('/assetsmanagement', [App\Http\Controllers\VisitorController::class, 'assetsmanagement'])->name('assetsmanagement');
-Route::get('/testimony', [App\Http\Controllers\VisitorController::class, 'testimony'])->name('testimony');
-Route::get('/fiduciary', [App\Http\Controllers\VisitorController::class, 'fiduciary'])->name('fiduciary');
-
-Route::get('/ourteam', [App\Http\Controllers\VisitorController::class, 'ourteam'])->name('ourteam');
-
-Route::get('/buybtc', [App\Http\Controllers\VisitorController::class, 'buybtc'])->name('buybtc');
-Route::get('/cannabis', [App\Http\Controllers\VisitorController::class, 'cannabis'])->name('cannabis');
-Route::get('/crypto', [App\Http\Controllers\VisitorController::class, 'crypto'])->name('crypto');
-Route::get('/finacialplaning', [App\Http\Controllers\VisitorController::class, 'finacialplaning'])->name('finacialplaning');
-Route::get('/forex', [App\Http\Controllers\VisitorController::class, 'forex'])->name('forex');
-Route::get('/goldinvestment', [App\Http\Controllers\VisitorController::class, 'goldinvestment'])->name('goldinvestment');
-Route::get('/legal', [App\Http\Controllers\VisitorController::class, 'legal'])->name('legal');
-Route::get('/loansandgrant', [App\Http\Controllers\VisitorController::class, 'loansandgrant'])->name('loansandgrant');
-Route::get('/oilandgas', [App\Http\Controllers\VisitorController::class, 'oilandgas'])->name('oilandgas');
-Route::get('/policy', [App\Http\Controllers\VisitorController::class, 'policy'])->name('policy');
-Route::get('/realestate', [App\Http\Controllers\VisitorController::class, 'realestate'])->name('realestate');
-Route::get('/retirement', [App\Http\Controllers\VisitorController::class, 'retirement'])->name('retirement');
-Route::get('/services', [App\Http\Controllers\VisitorController::class, 'services'])->name('services');
-Route::get('/stocks', [App\Http\Controllers\VisitorController::class, 'stocks'])->name('stocks');
-Route::get('/teams', [App\Http\Controllers\VisitorController::class, 'teams'])->name('teams');
-Route::get('/pricing', [App\Http\Controllers\VisitorController::class, 'pricing'])->name('pricing');
-Route::get('/pricing', [App\Http\Controllers\VisitorController::class, 'pricing'])->name('pricing');
-
-Route::get('/specialtrades', [App\Http\Controllers\VisitorController::class, 'specialtrades'])->name('specialtrades');
-
-Route::get('/forexplans', [App\Http\Controllers\VisitorController::class, 'forexplans'])->name('forexplans');
-
-Route::get('/cryptoplans', [App\Http\Controllers\VisitorController::class, 'cryptoplans'])->name('cryptoplans');
-
-Route::get('/realestateplan', [App\Http\Controllers\VisitorController::class, 'realestateplan'])->name('realestateplan');
-
-Route::get('/landbanking', [App\Http\Controllers\VisitorController::class, 'landbanking'])->name('landbanking');
-
-Route::get('/whatweinvestin', [App\Http\Controllers\VisitorController::class, 'whatweinvestin'])->name('whatweinvestin');
-
-Route::get('/news', [App\Http\Controllers\VisitorController::class, 'news'])->name('news');
-
-Route::get('/howwearedifferent', [App\Http\Controllers\VisitorController::class, 'howwearedifferent'])->name('howwearedifferent');
-
-Route::get('/clienteducation', [App\Http\Controllers\VisitorController::class, 'clienteducation'])->name('clienteducation');
-
-Route::get('/privacypolicy', [App\Http\Controllers\VisitorController::class, 'privacypolicy'])->name('privacypolicy');
-
-Route::get('/joinus', [App\Http\Controllers\VisitorController::class, 'joinus'])->name('joinus');
-
-Route::get('/tailoredinvestment', [App\Http\Controllers\VisitorController::class, 'tailoredinvestment'])->name('tailoredinvestment');
-
-Route::get('/portfoliomanagement', [App\Http\Controllers\VisitorController::class, 'portfoliomanagement'])->name('portfoliomanagement');
-
-
-
-
-Route::get('/about', [App\Http\Controllers\VisitorController::class, 'about'])->name('about');
-Route::get('/blog', [App\Http\Controllers\VisitorController::class, 'blog'])->name('blog');
-Route::get('/brochure', [App\Http\Controllers\VisitorController::class, 'brochure'])->name('brochure');
-Route::get('/companyvideo', [App\Http\Controllers\VisitorController::class, 'companyvideo'])->name('companyvideo');
-Route::get('/contact', [App\Http\Controllers\VisitorController::class, 'contact'])->name('contact');
-Route::get('/faq', [App\Http\Controllers\VisitorController::class, 'faq'])->name('faq');
-Route::get('/index', [App\Http\Controllers\VisitorController::class, 'index'])->name('index');
-Route::get('/invest', [App\Http\Controllers\VisitorController::class, 'invest'])->name('invest');
-Route::get('/testimony', [App\Http\Controllers\VisitorController::class, 'testimony'])->name('testimony');
-Route::get('/about', [App\Http\Controllers\VisitorController::class, 'about'])->name('about');
-Route::get('/blog', [App\Http\Controllers\VisitorController::class, 'blog'])->name('blog');
-Route::get('/brochure', [App\Http\Controllers\VisitorController::class, 'brochure'])->name('brochure');
-Route::get('/companyvideo', [App\Http\Controllers\VisitorController::class, 'companyvideo'])->name('companyvideo');
-Route::get('/contact', [App\Http\Controllers\VisitorController::class, 'contact'])->name('contact');
-Route::get('/faq', [App\Http\Controllers\VisitorController::class, 'faq'])->name('faq');
-Route::get('/index', [App\Http\Controllers\VisitorController::class, 'index'])->name('index');
-Route::get('/invest', [App\Http\Controllers\VisitorController::class, 'invest'])->name('invest');
-Route::get('/testimony', [App\Http\Controllers\VisitorController::class, 'testimony'])->name('testimony');
-Route::get('/about', [App\Http\Controllers\VisitorController::class, 'about'])->name('about');
-Route::get('/blog', [App\Http\Controllers\VisitorController::class, 'blog'])->name('blog');
-Route::get('/brochure', [App\Http\Controllers\VisitorController::class, 'brochure'])->name('brochure');
-Route::get('/companyvideo', [App\Http\Controllers\VisitorController::class, 'companyvideo'])->name('companyvideo');
-Route::get('/contact', [App\Http\Controllers\VisitorController::class, 'contact'])->name('contact');
-Route::get('/faq', [App\Http\Controllers\VisitorController::class, 'faq'])->name('faq');
-Route::get('/index', [App\Http\Controllers\VisitorController::class, 'index'])->name('index');
-Route::get('/invest', [App\Http\Controllers\VisitorController::class, 'invest'])->name('invest');
-Route::get('/testimony', [App\Http\Controllers\VisitorController::class, 'testimony'])->name('testimony');
-Route::get('/about', [App\Http\Controllers\VisitorController::class, 'about'])->name('about');
-Route::get('/blog', [App\Http\Controllers\VisitorController::class, 'blog'])->name('blog');
-Route::get('/brochure', [App\Http\Controllers\VisitorController::class, 'brochure'])->name('brochure');
-Route::get('/companyvideo', [App\Http\Controllers\VisitorController::class, 'companyvideo'])->name('companyvideo');
-Route::get('/contact', [App\Http\Controllers\VisitorController::class, 'contact'])->name('contact');
-Route::get('/faq', [App\Http\Controllers\VisitorController::class, 'faq'])->name('faq');
-Route::get('/index', [App\Http\Controllers\VisitorController::class, 'index'])->name('index');
-Route::get('/invest', [App\Http\Controllers\VisitorController::class, 'invest'])->name('invest');
-Route::get('/testimony', [App\Http\Controllers\VisitorController::class, 'testimony'])->name('testimony');
-Route::get('/about', [App\Http\Controllers\VisitorController::class, 'about'])->name('about');
-Route::get('/about', [App\Http\Controllers\VisitorController::class, 'about'])->name('about');
-Route::get('/blog', [App\Http\Controllers\VisitorController::class, 'blog'])->name('blog');
-Route::get('/brochure', [App\Http\Controllers\VisitorController::class, 'brochure'])->name('brochure');
-Route::get('/companyvideo', [App\Http\Controllers\VisitorController::class, 'companyvideo'])->name('companyvideo');
-Route::get('/contact', [App\Http\Controllers\VisitorController::class, 'contact'])->name('contact');
-Route::get('/faq', [App\Http\Controllers\VisitorController::class, 'faq'])->name('faq');
-Route::get('/index', [App\Http\Controllers\VisitorController::class, 'index'])->name('index');
-Route::get('/invest', [App\Http\Controllers\VisitorController::class, 'invest'])->name('invest');
-Route::get('/testimony', [App\Http\Controllers\VisitorController::class, 'testimony'])->name('testimony');
-Route::get('/about', [App\Http\Controllers\VisitorController::class, 'about'])->name('about');
-Route::get('/blog', [App\Http\Controllers\VisitorController::class, 'blog'])->name('blog');
-Route::get('/brochure', [App\Http\Controllers\VisitorController::class, 'brochure'])->name('brochure');
-Route::get('/companyvideo', [App\Http\Controllers\VisitorController::class, 'companyvideo'])->name('companyvideo');
-Route::get('/contact', [App\Http\Controllers\VisitorController::class, 'contact'])->name('contact');
-Route::get('/faq', [App\Http\Controllers\VisitorController::class, 'faq'])->name('faq');
-Route::get('/index', [App\Http\Controllers\VisitorController::class, 'index'])->name('index');
-Route::get('/invest', [App\Http\Controllers\VisitorController::class, 'invest'])->name('invest');
-Route::get('/testimony', [App\Http\Controllers\VisitorController::class, 'testimony'])->name('testimony');
-Route::get('/about', [App\Http\Controllers\VisitorController::class, 'about'])->name('about');
-Route::get('/blog', [App\Http\Controllers\VisitorController::class, 'blog'])->name('blog');
-Route::get('/brochure', [App\Http\Controllers\VisitorController::class, 'brochure'])->name('brochure');
-Route::get('/companyvideo', [App\Http\Controllers\VisitorController::class, 'companyvideo'])->name('companyvideo');
-Route::get('/contact', [App\Http\Controllers\VisitorController::class, 'contact'])->name('contact');
-Route::get('/faq', [App\Http\Controllers\VisitorController::class, 'faq'])->name('faq');
-Route::get('/index', [App\Http\Controllers\VisitorController::class, 'index'])->name('index');
-Route::get('/invest', [App\Http\Controllers\VisitorController::class, 'invest'])->name('invest');
-Route::get('/testimony', [App\Http\Controllers\VisitorController::class, 'testimony'])->name('testimony');

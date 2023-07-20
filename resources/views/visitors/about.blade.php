@@ -9,11 +9,11 @@
   <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
   <meta content="FIDOR" name="author"/>
   <title>{{$title}} | {{$company_features? $company_features->companyname :"No company name set"}}</title>
-  <link href="{{route('apple-touch-icon')}}" rel="apple-touch-icon" sizes="180x180"/>
+ 
   <!-- <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"> -->
   <link href="static/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
-   <link href="https://{{$company_features? $company_features->companyname :"No company name set"}}/site.webmanifest" rel="manifest"/>
+   <link href='https://{{$company_features? $company_features->companyname :"No company name set"}}/site.webmanifest' rel="manifest"/>
    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
    <!-- <link rel="stylesheet" href="./css2/style.css"> -->
    <link href="static/imported-css.css" rel="stylesheet">
@@ -422,31 +422,31 @@
       </div>
       <div class="col-lg-6 m-b-30" data-animate="fadeInLeft">
        <div class="carousel yuwnk7826stef" data-items="1">
-        <a data-lightbox="gallery-image" href="{{route('image-0-compressed')}}" target="_blank" title="Your image title here!">
+        <a data-lightbox="gallery-image" href="image-0-compressed" target="_blank" title="Your image title here!">
          <img alt="" src="static/site-images/compressed-assets/image-0-compressed.jpg"/>
         </a>
-        <a data-lightbox="gallery-image" href="{{route('BMO_CS_TradingFloor')}}" target="_blank" title="Your image title here!">
+        <a data-lightbox="gallery-image" href="'BMO_CS_TradingFloor' target="_blank" title="Your image title here!">
          <img alt="" src="static/site-images/BMO_CS_TradingFloor.jpg"/>
         </a>
-        <a data-lightbox="gallery-image" href="{{route('image-1-compressed')}}" target="_blank" title="Your image title here!">
+        <a data-lightbox="gallery-image" href="image-1-compressed" target="_blank" title="Your image title here!">
          <img alt="" src="static/site-images/compressed-assets/image-1-compressed.jpg"/>
         </a>
-        <a data-lightbox="gallery-image" href="{{route('WhatWeDoPeople2x')}}" target="_blank" title="Your image title here!">
+        <a data-lightbox="gallery-image" href="WhatWeDoPeople2x" target="_blank" title="Your image title here!">
          <img alt="" src="static/site-images/WhatWeDoPeople2x.jpg"/>
         </a>
-        <a data-lightbox="gallery-image" href="{{route('image-5-compressed')}}" target="_blank" title="Your image title here!">
+        <a data-lightbox="gallery-image" href="image-5-compressed" target="_blank" title="Your image title here!">
          <img alt="" src="static/site-images/compressed-assets/image-5-compressed.jpg"/>
         </a>
-        <a data-lightbox="gallery-image" href="{{route('team1')}}" target="_blank" title="Your image title here!">
+        <a data-lightbox="gallery-image" href="team1" target="_blank" title="Your image title here!">
          <img alt="" src="static/site-images/team1.jpg"/>
         </a>
-        <a data-lightbox="gallery-image" href="{{route('team2')}}" target="_blank" title="Your image title here!">
+        <a data-lightbox="gallery-image" href="team2" target="_blank" title="Your image title here!">
          <img alt="" src="static/site-images/team2.jpg"/>
         </a>
-        <a data-lightbox="gallery-image" href="{{route('team3')}}" target="_blank" title="Your image title here!">
+        <a data-lightbox="gallery-image" href="team3" target="_blank" title="Your image title here!">
          <img alt="" src="static/site-images/team3.jpg"/>
         </a>
-        <a data-lightbox="gallery-image" href="{{route('stock-trading')}}" target="_blank" title="Your image title here!">
+        <a data-lightbox="gallery-image" href="stock-trading" target="_blank" title="Your image title here!">
          <img alt="" src="static/site-images/stock-trading.jpg"/>
         </a>
        </div>
