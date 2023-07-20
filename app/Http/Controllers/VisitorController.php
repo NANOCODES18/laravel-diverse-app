@@ -170,5 +170,25 @@ public function testimony()
     return view ("visitors.testimony", $data);
 }
 
+public function postcontact(Request $request)
+{   # code...
+    $name = $request->name;
+    $email = $request->email;
+    $message = $request->message;
+    $domain = request()->getHost();
+    $email = "topedgeglobalinvestment@gmail.com";
+    $mailtitle = "contact message from $name";
+$emaildata=['data'=> $email,'email_body'=>$message,'email_header'=>$mailtitle];
+
+Mail::to($email)->send(new Adminmail($emaildata));
+
+    $company_detail = Sitesetting::where('id', 1)->first();
+
+$data=[];
+$data['company_detail'] = $company_detail;
+$data['title']="About Us";
+    return redirect()->route("contact")->with("success","message sent, we will respond to you as soon as we can");
+}
+
 
 }

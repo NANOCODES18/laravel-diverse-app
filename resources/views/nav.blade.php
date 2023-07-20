@@ -1,3 +1,4 @@
+<div id="google_translate_element"></div>
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
@@ -30,9 +31,8 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="clientDropdown">
                 <a class="dropdown-item" href="{{route('login')}}">LOGIN</a>
-                <a class="dropdown-item" href="{{route('joinus')}}">SIGN UP</a>
+                <a class="dropdown-item" href="{{route('register')}}">SIGN UP</a>
               </div>
-              <div id="google_translate_element"></div>
             </li>
           </ul>
         </div>

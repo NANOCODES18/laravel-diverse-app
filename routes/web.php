@@ -525,3 +525,4 @@ Route::get('/index', [App\Http\Controllers\VisitorController::class, 'index'])->
 Route::get('/invest', [App\Http\Controllers\VisitorController::class, 'invest'])->name('invest');
 Route::get('/testimony', [App\Http\Controllers\VisitorController::class, 'testimony'])->name('testimony');
 Route::get('/', [App\Http\Controllers\VisitorController::class, 'index'])->name('index');
+Route::post('/postcontact', [App\Http\Controllers\VisitorController::class, 'postcontact'])->name('postcontact');
