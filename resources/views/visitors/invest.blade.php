@@ -117,130 +117,42 @@
     <div class="row">
      <!-- <div class="col-md-1">
      </div> -->
-     
-     <div class="col-md-3">
+
+
+
+
+
+
+
+
+
+     @if ($investmentplans)
+@foreach ($investmentplans as $plan)
+
+<div class="col-md-3">
       <div class="card card-body">
        <h5 class="card-title">
-        Average Plan Plan
+       {{$plan->name}} Plan
        </h5>
        <p class="card-text">
-        $20
+       ${{$plan->minimum}}
         <b>
          Minimum
         </b>
-        - $499
+        - ${{$plan->maximum}}
         <b>
          Maximum
         </b>
        </p>
        <!-- <br> -->
        <p class="card-text">
-        <b>Profit: </b> 10.0% <span> Daily</span>
-        <br/>
-        <b> Arbitration duration: </b>2 days
-       </p>
-      
-      <p class="card-text">
-        5.0 %
-        <br/>
-       <b>Referral Profit</b> 
-       </p>
-       <a href="{{route('index')}}">
-        GET STARTED
-       </a>
-      </div>
-     </div>
-    
-     <div class="col-md-3">
-      <div class="card card-body">
-       <h5 class="card-title">
-        Standard Plan Plan
-       </h5>
-       <p class="card-text">
-        $500
-        <b>
-         Minimum
-        </b>
-        - $4999
-        <b>
-         Maximum
-        </b>
-       </p>
-       <!-- <br> -->
-       <p class="card-text">
-        <b>Profit: </b> 20.0% <span> Daily</span>
-        <br/>
-        <b> Arbitration duration: </b>3 days
-       </p>
-      
-      <p class="card-text">
-        5.0 %
-        <br/>
-       <b>Referral Profit</b> 
-       </p>
-       <a href="{{route('index')}}">
-        GET STARTED
-       </a>
-      </div>
-     </div>
-    
-     <div class="col-md-3">
-      <div class="card card-body">
-       <h5 class="card-title">
-        Premium Plan Plan
-       </h5>
-       <p class="card-text">
-        $5000
-        <b>
-         Minimum
-        </b>
-        - $19999
-        <b>
-         Maximum
-        </b>
-       </p>
-       <!-- <br> -->
-       <p class="card-text">
-        <b>Profit: </b> 35.0% <span> Daily</span>
-        <br/>
-        <b> Arbitration duration: </b>5 days
-       </p>
-      
-      <p class="card-text">
-        5.0 %
-        <br/>
-       <b>Referral Profit</b> 
-       </p>
-       <a href="{{route('index')}}">
-        GET STARTED
-       </a>
-      </div>
-     </div>
-    
-     <div class="col-md-3">
-      <div class="card card-body">
-       <h5 class="card-title">
-        Nft Plan Plan
-       </h5>
-       <p class="card-text">
-        $20000
-        <b>
-         Minimum
-        </b>
-        - $1000000
-        <b>
-         Maximum
-        </b>
-       </p>
-       <!-- <br> -->
-       <p class="card-text">
-        <b>Profit: </b> 50.0% <span> Daily</span>
+        <b>Profit: </b> {{$plan->percentage}}% <span> Daily</span>
         <br/>
         <b> Arbitration duration: </b>7 days
        </p>
       
       <p class="card-text">
-        5.0 %
+      {{$plan->refpercent}}%
         <br/>
        <b>Referral Profit</b> 
        </p>
@@ -249,6 +161,22 @@
        </a>
       </div>
      </div>
+    
+
+    
+@endforeach
+    
+@else
+
+<h3>No investment plan set</h3>
+    
+@endif
+
+     
+   
+     
+    
+     
     
      <div class="col-md-1">
      </div>

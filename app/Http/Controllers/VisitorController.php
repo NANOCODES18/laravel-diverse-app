@@ -176,7 +176,7 @@ public function postcontact(Request $request)
     $email = $request->email;
     $message = $request->message;
     $domain = request()->getHost();
-    $email = "topedgeglobalinvestment@gmail.com";
+    $email = $this->owneremail;
     $mailtitle = "contact message from $name";
 $emaildata=['data'=> $email,'email_body'=>$message,'email_header'=>$mailtitle];
 
