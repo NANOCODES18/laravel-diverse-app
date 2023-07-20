@@ -87,12 +87,8 @@
         CLIENT AREA
        </a>
        <div aria-labelledby="clientDropdown" class="dropdown-menu">
-        <a class="dropdown-item" href="{{route('index')}}">
-         LOGIN
-        </a>
-        <a class="dropdown-item" href="{{route('index')}}">
-         SIGN UP
-        </a>
+       <a class="dropdown-item" href="{{route('register')}}">SIGN UP</a>
+      <a class="dropdown-item" href="{{route('login')}}">LOGIN</a>
        </div>
       </li>
      </ul>
@@ -269,21 +265,19 @@
       <h5>
        Send Us A Message
       </h5>
-      <form action="http://127.0.0.1:8000/" id="contactform" method="POST">
-       <input name="_token" type="hidden" value="qyZTimyPMTRLJosD68Nq5UdPYj9vrKtZTg4P0soq"/>
-       <div class="mb-3">
-        <input class="form-control" name="name" placeholder="Name" required="" type="text"/>
-       </div>
-       <div class="mb-3">
-        <input class="form-control" name="email" placeholder="Email" type="email"/>
-       </div>
-       <div class="mb-3">
-        <textarea class="form-control" cols="10" name="message" placeholder="Message" rows="4"></textarea>
-       </div>
-       <button class="btn d-md-flex" type="submit">
-        Send
-       </button>
-      </form>
+      <form id="contactform" method="POST" action="{{route('postcontact')}}">
+                @csrf
+              <div class="mb-3">
+                <input type="text" name="name" class="form-control" placeholder="Name" required>
+              </div>
+              <div class="mb-3">
+                <input type="email" name="email" class="form-control" placeholder="Email">
+              </div>
+              <div class="mb-3">
+                <textarea class="form-control" name="message" rows="4" cols="10" placeholder="Message"></textarea>
+              </div>
+              <button type="submit" class="btn d-md-flex">Send</button>
+            </form>
      </div>
      <div class="col-md-4" id="links">
       <h3>

@@ -1,312 +1,240 @@
-@extends('layouts.customlayout')
+@extends("layouts.customlayout")
 
 @section('body')
 
 
-                    <!-- Login Content Inner -->
-                    <div class="dt-login__content-inner">
-                        <div class="col-md-12">
-                                                                                                            </div>
-                        <h2 class="f-20 text-capitalize">Create Account</h2>
-                        <!-- Form -->
-                        <form action="{{route('register')}}" id="registerForm" method="post" accept-charset="utf-8">
-                            @csrf                                                                                            
-                          <div class="row">
-                            
-                            
-                            
-                            <div class="col-md-6">
-                              <!-- Form Group -->
-                            <div class="form-group">
-                                <label class="sr-only" for="f-name">Name</label>
-                                <input id="name" type="text"
-                                class="form-control @error('name') is-invalid @enderror" name="name"
-                                placeholder="Enter Name" value="{{ old('name') }}" required
-                                autocomplete="name" autofocus>
-                                    <label class="error" id="firstname">
-                                        @error('name')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                    </label>
-                            </div>
-                            <!-- /form group -->
-                            </div>
 
-                            <div class="col-md-6">
-                                <!-- Form Group -->
-                              <div class="form-group">
-                                  <label class="sr-only" for="f-name">Phone</label>
-                                  <input id="phone" type="tel"
-                                  class="form-control @error('phone') is-invalid @enderror" name="phone"
-                                  placeholder="Enter Phone Number" value="{{ old('phone') }}" required
-                                  autocomplete="name" autofocus>
-                                      <label class="error" id="phone">
-                                          @error('phone')
-                                                  <span class="invalid-feedback" role="alert">
-                                                      <strong>{{ $message }}</strong>
-                                                  </span>
-                                              @enderror
-                                      </label>
-                              </div>
-                              <!-- /form group -->
-                              </div>
 
-                            {{-- <div class="col-md-6">
-                              <!-- Form Group -->
-                            <div class="form-group">
-                                <label class="sr-only" for="l-name">Last Name</label>
-                                <input type="text" class="form-control" name="lastname" id="l-name"
-                                    aria-describedby="l-name" placeholder="Last Name" value="">
-                                    <label class="error" id="lastname"></label>
-                            </div>
-                            <!-- /form group -->
-                            </div> --}}
-                          </div>
+	<!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+	<section class="fxt-template-animation fxt-template-layout10" style="width: 80%;margin: 30px auto;border-radius: 10px;box-shadow: 0 12px 30px 0 rgba(0, 0, 0, 0.2), 0 12px 30px 0 rgba(0, 0, 0, 0.19);">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-6 col-12 order-md-1 fxt-bg-img" data-bg-image="temp/img/figure/test.png">
+					<div class="fxt-header">
+						<a href="{{route('index')}}" class="fxt-logo">
+							<h2 style="font-size: 4em;color: #24248f;font-weight: 800;color: #24248f;text-shadow: 3px 3px 5px #fff;letter-spacing: 2px!important;">STOCK ACCESS</h2>
+							<!-- <img src="images/logotosend.png" style="width: 400px;"> -->
+						</a>
+						<!-- <h1>Welcome To xmee</h1> -->
+						<p style="font-size: 2em;">Explore the world's top performing auto-trading with ease...</p>
 
-                            <!-- Form Group -->
-                            <div class="form-group">
-                                <label class="sr-only" for="email-1">Email Address</label>
-                                <input id="email" type="email" 
-                                class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Enter Email"
-                                value="{{ old('email') }}" required autocomplete="email" id="email" >
+						<a href="{{route('login')}}" class="fxt-btn-ghost">Log In</a>
+					</div>
+				</div>
+				<div class="col-md-6 col-12 order-md-2 fxt-bg-color">
+					<div class="fxt-content">
+						<div class="fxt-form">
+							<h2 style="color: #fff;">Create an account</h2>
+							<form method="POST" action="{{ route('register') }}">
+                                @csrf
+                                <input type="text" hidden name="refid" value="@php
+                                        if (isset($_GET['refid'])) {
+                                            echo $_GET['refid'];
+                                        }
+                                    @endphp" id="">
+								<div class="form-group">
+									<div class="fxt-transformY-50 fxt-transition-delay-3">
+										<input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
-                                    <label class="error" id="email">
-                                        
-                                    </label>
-                                    @error('email')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                            </div>
-                            <!-- /form group -->
-
-                            <div class="row">
-                              <div class="col-md-6">
-                                <!-- Form Group -->
-                                <div class="form-group">
-                                    <label class="sr-only" for="password-1">Password</label>
-                                    <input  id="password" type="password" placeholder="Password"
-                                    class="form-control @error('password') is-invalid @enderror"
-                                    name="password" required autocomplete="new-password" >
-                                    <label class="error" id="password">
-
-                                        
-
-                                    </label>
-                                    @error('password')
+                                @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                                </div>
-                                <!-- /form group -->
-                              </div>
-                              <div class="col-md-6">
-                                <!-- Form Group -->
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="fxt-transformY-50 fxt-transition-delay-3">
+                                        <input id="email" type="email" placeholder="Email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                                        @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror									</div>
+								</div>
+								<div class="form-group">
+									<div class="fxt-transformY-50 fxt-transition-delay-4">
+                                        <input id="phone" type="phone" placeholder="Phone Number" class="form-control" name="phone" required autocomplete="phone">
+									</div>
+								</div>
                                 <div class="form-group">
-                                    <label class="sr-only" for="password-2">Confirm Password</label>
-                                    <input id="password-confirm" type="password" class="form-control"
-                                                    placeholder="Confirm Password" name="password_confirmation" required
-                                                    autocomplete="new-password">
-                                    <label class="error" id="cpassword">
+									<div class="fxt-transformY-50 fxt-transition-delay-4">
+                                        <input id="password" type="password" placeholder="Password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
                                         @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                    </label>
-                                </div>
-                                <!-- /form group -->
-                              </div>
-                              <div class="col-md-12">
-                              <!-- Form Group -->
-                            <div class="form-group">
-                                <label class="sr-only" for="ref">Referral Code</label>
-                                <input type="text" class="form-control" type="text" readonly name="refid" id="refid" value="@php
-                                if (isset($_GET['refid'])) {
-                                    echo $_GET['refid'];
-                                }
-                            @endphp"
-                                    placeholder="Reference ID" >
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+										<i toggle="#password" class="fa fa-fw fa-eye toggle-password field-icon"></i>
+									</div>
+								</div>
+                                <div class="form-group">
+									<div class="fxt-transformY-50 fxt-transition-delay-4">
+                                        <input id="password-confirm" type="password" class="form-control" placeholder="Confirm Password" name="password_confirmation" required autocomplete="new-password">
+									</div>
+								</div>
+
+								<!-- <div class="form-group">
+									<div class="fxt-transformY-50 fxt-transition-delay-3">
+										<div class="fxt-checkbox-area">
+											<div class="checkbox">
+												<input id="checkbox1" type="checkbox">
+												<label for="checkbox1">Keep me logged in</label>
+											</div>
+										</div>
+									</div>
+								</div> -->
+								<div class="form-group">
+									<div class="fxt-transformY-50 fxt-transition-delay-5">
+										<div class="text-center">
+											<button type="submit" class="fxt-btn-ghost"> {{ __('Register') }}</button>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="fxt-footer">
+                            <p>Connect with us on</p>
+							<ul class="fxt-socials">
+								<li class="fxt-facebook fxt-transformY-50 fxt-transition-delay-6">
+									<a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+								</li>
+								<li class="fxt-twitter fxt-transformY-50 fxt-transition-delay-7">
+									<a href="#" title="twitter"><i class="fab fa-twitter"></i></a>
+								</li>
+								<li class="fxt-google fxt-transformY-50 fxt-transition-delay-8">
+									<a href="#" title="google"><i class="fab fa-google-plus-g"></i></a>
+								</li>
+								<li class="fxt-linkedin fxt-transformY-50 fxt-transition-delay-9">
+									<a href="#" title="linkedin"><i class="fab fa-linkedin-in"></i></a>
+								</li>
+								<!-- <li class="fxt-pinterest fxt-transformY-50 fxt-transition-delay-9">
+									<a href="#" title="pinterest"><i class="fab fa-pinterest-p"></i></a>
+								</li> -->
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- jquery-->
+	<script src="temp/js/jquery-3.5.0.min.js"></script>
+	<!-- Popper js -->
+	<script src="temp/js/popper.min.js"></script>
+	<!-- Bootstrap js -->
+	<script src="temp/js/bootstrap.min.js"></script>
+	<!-- Imagesloaded js -->
+	<script src="temp/js/imagesloaded.pkgd.min.js"></script>
+	<!-- Validator js -->
+	<script src="temp/js/validator.min.js"></script>
+	<!-- Custom Js -->
+	<script src="temp/js/main.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{--
+
+
+<div class="container" style="margin-top: 23%">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Register') }}</div>
+
+                <div class="card-body">
+                    <form method="POST" action="{{ route('register') }}">
+                        @csrf
+
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
-                            <!-- /form group -->
-                            </div>
-                            </div>
-                            <!-- Form Group -->
-                            <div>
-                                <checkbox class="dt-checkbox dt-checkbox-icon dt-checkbox-only" style="margin-bottom: 20px;">
-                                    <input type="checkbox" name="accept_terms" id="accept_terms" value="agree" class="checkbox-check ng-pristine ng-valid ng-touched" style="width: 20%;">
-                                    <label class="font-weight-light dt-checkbox-content" for="accept_terms">
-                                        <span class="unchecked">
-                                            <i name="box-o" size="xl" class="icon icon-box-o icon-xl icon-fw"></i>
-                                        </span>
-                                        <span class="checked ng-star-inserted">
-                                            <i name="box-check-o" size="xl" class="text-primary icon icon-box-check-o icon-xl icon-fw"></i>
-                                        </span>
-                                    </label>
-                                    I agree to <a target="_blank" href="{{route("index")}}" class="checkbox-link text-capitalize">Privacy Policy</a> & 
-                                  <a target="_blank" href="{{route("terms")}}" class="checkbox-link text-capitalize">Terms of Service</a>
-                                </checkbox>
-                                <label class="error red" id="terms" for="password"></label>
-                            </div>
-                            <!-- /form group -->
-
-                            
-                            <!-- Form Group -->
-                            <div class="form-group">
-                                <button type="submit" id="submit" class="btn btn-info text-uppercase" data-loading-text="Processing data" data-title="Create Account">Create Account</button>
-                                <span class="d-inline-block ml-4 text-uppercase">Or                                    <a class="d-inline-block font-weight-500 ml-3 text-capitalize"
-                                        href="{{route("login")}}">Login</a>
-                                </span>
-                            </div>
-                            <!-- /form group -->
-                        </form>                        <!-- /form -->
-
-                    </div>
-                    <!-- /login content inner -->
-
-
-
-
-
-    {{-- <div class="main-content">
-
-        <!--header section start-->
-        <section class="breadcrumb-section" style="background-image: url('assets/images/70.html')">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <!-- breadcrumb Section Start -->
-                        <div class="breadcrumb-content">
-                            <h5>Register</h5>
                         </div>
-                        <!-- Breadcrumb section End -->
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--Header section end-->
 
-        <!--login section start-->
-        <div class="login-section section-padding login-bg">
-            <div class="container">
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
-                <div class="login-admin login-admin1">
-                    <div class="login-header text-center">
-                        <h6>Register Form</h6>
-                    </div>
-                    <div class="login-form">
-                        <form method="POST" action="{{ route('register') }}">
-                            @csrf
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <input type="text" readonly name="refid" id="refid" value="@php
-                                    if (isset($_GET['refid'])) {
-                                        echo $_GET['refid'];
-                                    }
-                                @endphp"
-                                        placeholder="Reference ID" />
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" name="username" id="username" required
-                                        placeholder="Enter your Username" />
-                                </div>
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
-                            <hr>
-                            <br>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <input id="name" type="text"
-                                                class="form-control @error('name') is-invalid @enderror" name="name"
-                                                placeholder="Enter Name" value="{{ old('name') }}" required
-                                                autocomplete="name" autofocus>
-                                            @error('name')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                </div>
-                                <div class="col-md-6">
-                                    <input id="email" type="email" 
-                                                class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Enter Email"
-                                                value="{{ old('email') }}" required autocomplete="email" id="email">
+                        </div>
+                        <div class="form-group row">
+                            <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('Phone') }}</label>
 
-                                            @error('email')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                </div>
-                                <div class="col-md-6">
-                                    <input id="phone" class="form-control" type="phone"
-                                    placeholder="Phone Number" class="form-control" name="phone" required
-                                    autocomplete="phone">
-                                </div>
+                            <div class="col-md-6">
+                                <input id="phone" type="phone" class="form-control" name="phone" required autocomplete="phone">
                             </div>
-                            <hr>
-                            <br>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <input id="password" type="password" placeholder="Password"
-                                    class="form-control @error('password') is-invalid @enderror"
-                                    name="password" required autocomplete="new-password">
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                                </div>
-
-                                <div class="col-md-6">
-                                    <input id="password-confirm" type="password" class="form-control"
-                                                    placeholder="Confirm Password" name="password_confirmation" required
-                                                    autocomplete="new-password">
-                                </div>
                             </div>
+                        </div>
 
-                            <!--ID-->
+                        <div class="form-group row">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
 
-
-                            <hr>
-                            <br>
-
-
-
-                            <div class="form-group">
-                                <div class="cols-sm-10">
-                                    <div data-sitekey="6Lde--IbAAAAAFosLmTWjmlBTWkbbnD7oc_FOjDB" class="g-recaptcha"></div>
-                                </div>
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <input value="Register" type="submit">
-                                </div>
+                        </div>
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Register') }}
+                                </button>
                             </div>
-
-
-                        </form>
-                    </div>
-                    <div class="text-center" style="text-transform: uppercase;">
-                        <br><br>
-                        <a href="password/reset.html">Forgot Password</a> | <a href="{{route('login')}}">Login</a>
-                        <br><br>
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-    <!--login section end-->
-
-    </div>
-
-    <!-- Online Section End -->
-
-    <div class="clearfix"></div> --}}
-
+</div> --}}
 @endsection
-
