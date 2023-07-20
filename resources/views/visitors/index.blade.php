@@ -69,7 +69,7 @@ h3{
   <section class="homefront">
     <nav class="navbar navbar-expand-lg change" id="navbar">
       <a class="navbar-brand" href="{{route('index')}}">
-        <img alt="" height="42" src="media/site_images/diverseclimax_DfgBCAa.html" style="object-fit: contain;" width="220" />
+        <img alt="" height="42" src="logo.png" style="object-fit: contain;" width="220" />
         <!-- {{$company_features? $company_features->companyname :"No company name set"}} -->
       </a>
       <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
@@ -1799,7 +1799,7 @@ h3{
           </div>
         </div>
         <div class="col-md-4">
-          <img alt="website logo" height="40" src="media/site_images/diverseclimax_DfgBCAa.html" width="100" />
+          <img alt="website logo" height="40" src="logo.png" width="100" />
           <h3>
           </h3>
           <div class="contacts" tyle="text-decoration: none;">

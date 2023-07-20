@@ -107,10 +107,10 @@
       <div id="logo">
        <a class="navbar-brand" href="{{route('index')}}">
         <span class="logo-default">
-         <img src="media/site_images/diverseclimax_DfgBCAa.html"/>
+         <img src="logo.png"/>
         </span>
         <span class="logo-dark">
-         <img src="media/site_images/diverseclimax_DfgBCAa.html"/>
+         <img src="logo.png"/>
         </span>
         <!-- {{$company_features? $company_features->companyname :"No company name set"}} -->
        </a>
@@ -1243,7 +1243,7 @@
        </div>
       </div>
       <div class="col-md-4">
-       <img alt="website logo" height="40" src="media/site_images/diverseclimax_DfgBCAa.html" width="100"/>
+       <img alt="website logo" height="40" src="logo.png" width="100"/>
        <h3>
        </h3>
        <div class="contacts">

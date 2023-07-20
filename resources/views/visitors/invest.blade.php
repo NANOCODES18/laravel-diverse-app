@@ -28,7 +28,7 @@
   <section class="plansfront">
    <nav class="navbar navbar-expand-lg sticky-top change" id="navbar">
     <a class="navbar-brand" href="{{route('index')}}">
-     <img alt="" height="42" src="media/site_images/diverseclimax_DfgBCAa.html" style="object-fit: contain;" width="220"/>
+     <img alt="" height="42" src="logo.png" style="object-fit: contain;" width="220"/>
      <!-- {{$company_features? $company_features->companyname :"No company name set"}} -->
     </a>
     <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
@@ -236,7 +236,7 @@
       </div>
      </div>
      <div class="col-md-4">
-      <img alt="website logo" height="40" src="media/site_images/diverseclimax_DfgBCAa.html" width="100"/>
+      <img alt="website logo" height="40" src="logo.png" width="100"/>
       <h3>
       </h3>
       <div class="contacts">
